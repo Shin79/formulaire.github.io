@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de paiement</title>
+    <link rel="stylesheet" href="formulaire.css"/>
+</head>
+<body>
+    
+    <form method="post" action="" name="form">
+        <fieldset>
+            <legend>Vos informations personnelles : </legend>
+                <div id="sexe">
+                    <input type="radio" name="sexe" id="femme" value="femme"/>
+                    <label for="femme" class="inline">Madame</label>
+                    <input type="radio" name="sexe" id="homme" value="homme"/>
+                    <label for="homme" class="inline">Monsieur</label>
+                </div>
+                <div>
+                    <label for="nom">Nom <em>*</em> : </label>
+                    <!--On utilise les expressions régulières pour poser des conditions dans la validation d'un champ de texte en utilisant l'attribut pattern-->
+                    <input type="text" id="nom" name="nom" pattern="[^0-9,;:?.]{2,20}" required/>
+                    <label for="prenom">Prénom <em>*</em> : </label>
+                    <input type="text" id="prenom" name="prenom" pattern="[^0-9,;:?.]{2,20}" required/><br/>
+                    <label for="naissance">Votre date de naissance : </label>
+                    <input type="date" id="naissance" name="naissance"/><br/>
+                    <label for="email">Votre adresse e-mail <em>*</em> : </label>
+                    <input type="email" id="email" name="email" placeholder="nom@email.com" pattern="^[\w\-\_\.]+@[\w\-\_\.]{2,}\.[\w]{2,3}$" required/>
+                </div><br/><br/>
+                <fieldset>
+                    <div class="form-group">
+                     <label class="col-sm-4 control-label">Adresse Complète</label>
+                     <div class="col-sm-8">
+                       <input id="user_input_autocomplete_address" name="user_input_autocomplete_address"
+                              class="form-control" placeholder="Insérez votre adresse...">
+                     </div>
+                   </div><!--Les champs suivants sont désactivés et serviront à recueillir les données-->
+                    <fieldset class="disabled">
+                        <div class="form-group">
+                        <label class="col-sm-4 control-label"><code>Numéro</code></label>
+                        <div class="col-sm-8">
+                            <input id="street_number" name="street_number" disabled="true" class="form-control">
+                        </div>
+                        </div>
+                        <div class="form-group">
+                        <label class="col-sm-4 control-label"><code>Adresse</code></label>
+                        <div class="col-sm-8">
+                            <input id="route" name="route" disabled="true" class="form-control">
+                        </div>
+                        </div>
+                        <div class="form-group">
+                        <label class="col-sm-4 control-label"><code>Ville</code></label>
+                        <div class="col-sm-8">
+                            <input id="locality" name="locality" disabled="true" class="form-control">
+                        </div>
+                        </div>
+                        <div class="form-group">
+                        <label class="col-sm-4 control-label"><code>Code postal</code></label>
+                        <div class="col-sm-8">
+                            <input id="postal_code" name="postal_code" disabled="true" class="form-control">
+                        </div>
+                        </div>
+                        <div class="form-group">
+                        <label class="col-sm-4 control-label"><code>Pays</code></label>
+                        <div class="col-sm-8">
+                            <input id="country" name="country" disabled="true" class="form-control">
+                        </div>
+                        </div>
+                    </fieldset>
+                </fieldset>
+                <div id="news">
+                    <label for="newsletter" class="inline">Cochez la case pour vous abonner à notre newsletter : </label>
+                    <input type="checkbox" id="newsletter" name="newsletter" /><br/>
+                </div>
+                <div id="boutons">
+                    <input type="submit" value="Envoyer"/>
+                    <input type="reset" value="Annuler"/>
+                </div>
+        </fieldset>
+    </form>
+    <script src="form.js"></script>
+    <!-- On appelle l'API de Google Maps en insérant la clé API récupérée sur le site Google API's-->
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDActxIvlo7lCkoHW5kS-z_sUhd7WaSo0w&callback=initial">
+    </script>
+</body>
+</html>

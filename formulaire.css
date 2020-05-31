@@ -1,0 +1,60 @@
+
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 800px;
+    margin: auto;
+    background-color:#000;
+    border: 3px solid #fff;
+    border-radius:4px;
+    height:800px;
+}
+form{
+    background-color: #b6b4b4;
+    height: 760px;
+    margin: auto;
+    padding:20px;
+}
+input{
+    width: 200px;
+    padding:5px;
+}
+#femme,#homme,#newsletter{
+    width:30px;
+}
+#cp,#rue{
+    width: 60px;
+}
+em{
+    color: #F00;
+    font-weight: bolder;
+}
+legend{
+    font-weight: bolder;
+}
+/* Utilisation des pseudo-classes pour marquer les champs valides et invalides en écrasant les valeurs par défaut*/
+input:invalid{
+    border:2px solid #F00;
+    background-color:#FFDDDD;
+}
+input:valid{
+    border: 1px solid #000;
+}
+#nom,#prenom{
+    text-transform: capitalize;
+}
+fieldset{
+    border-radius: 9px;
+    margin-bottom: 60px;
+}
+label{
+    display: block;
+}
+label.inline{
+    display: inline;
+}
+#news{
+    margin-bottom: 10px;
+}
+#numero{
+    text-transform: uppercase;
+}
